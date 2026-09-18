@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro exclusivo - oliva & co.</title>
+    <!-- fontes elegantes importadas do google fonts para passar o ar de alto padrão -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- link de conexão com o arquivo de estilização externa css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- container principal que centraliza o card de cadastro na tela -->
+    <div class="cadastro-container">
+        <div class="cadastro-header">
+            <h2>Oliva & Co.</h2>
+            <p>cadastre-se para oferecer o cuidado que seu pet merece.</p>
+        </div>
+        
+        <!-- formulario com novalidate para deixar a validação visual por conta do javascript -->
+        <form id="formCadastro" noValidate>
+            <!-- entrada para o nome do tutor -->
+            <div class="input-group">
+                <label for="nomeTutor">Nome do Tutor</label>
+                <input type="text" id="nomeTutor" placeholder="ex: sophia alcantara" required>
+                <span class="error-message" id="error-nomeTutor">por favor, insira o nome completo do tutor.</span>
+            </div>
+            
+            <!-- linha dupla: nome do pet e raça agrupados de forma elegante -->
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="nomePet">Nome do Pet</label>
+                    <input type="text" id="nomePet" placeholder="ex: valentino" required>
+                    <span class="error-message" id="error-nomePet">insira o nome do pet.</span>
+                </div>
+                <div class="input-group">
+                    <label for="raca">Raça</label>
+                    <input type="text" id="raca" placeholder="ex: maltês" required>
+                    <span class="error-message" id="error-raca">insira a raça.</span>
+                </div>
+            </div>
+
+            <!-- linha tripla: genero, peso e idade alinhados lado a lado para otimizar espaço -->
+            <div class="input-row-three">
+                <div class="input-group">
+                    <label for="genero">Gênero</label>
+                    <select id="genero" required>
+                        <option value="" disabled selected>selecione</option>
+                        <option value="m">macho</option>
+                        <option value="f">fêmea</option>
+                    </select>
+                    <span class="error-message" id="error-genero">selecione.</span>
+                </div>
+                <div class="input-group">
+                    <label for="peso">Peso (kg)</label>
+                    <input type="number" id="peso" step="0.1" placeholder="ex: 5.5" required>
+                    <span class="error-message" id="error-peso">insira o peso.</span>
+                </div>
+                <div class="input-group">
+                    <label for="idade">Idade (anos)</label>
+                    <input type="number" id="idade" placeholder="ex: 3" required>
+                    <span class="error-message" id="error-idade">insira a idade.</span>
+                </div>
+            </div>
+            
+            <!-- entrada para o e-mail de contato -->
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="tutor@exemplo.com" required>
+                <span class="error-message" id="error-email">insira um e-mail válido.</span>
+            </div>
+
+            <!-- entrada para a senha de acesso -->
+            <div class="input-group">
+                <label for="senha">Senha (Min. 6 caracteres)</label>
+                <input type="password" id="senha" placeholder="crie uma senha forte" required>
+                <span class="error-message" id="error-senha">a senha deve ter pelo menos 6 caracteres.</span>
+            </div>
+
+            <!-- botao de envio principal -->
+            <button type="submit" class="btn-submit">Enviar</button>
+
+            <!-- rodape para navegar ate a tela de login que esta na pasta ao lado -->
+            <div class="cadastro-footer">
+                <p>já possui acesso? <a href="../login/index.html">fazer login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- link de conexão com o arquivo de inteligência e validação em javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

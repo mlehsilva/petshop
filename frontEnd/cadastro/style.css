@@ -1,0 +1,188 @@
+/* definicao da paleta de cores sofisticada usando variaveis do css */
+:root {
+    --verde-oliva: #708264; /* tom de verde-oliva mais claro, luminoso e moderno */
+    --verde-oliva-dark: #55664C; /* tom medio para criar o degrade suave de fundo */
+    --marrom-couro: #5C4033; /* cor dos textos principais e destaques premium */
+    --bege-claro: #F9F6F0; /* fundo dos inputs simulando papel acetinado de alta gramatura */
+    --bege-card: #FFFFFF; /* fundo do card principal para contraste limpo */
+    --texto-escuro: #2D2722; /* cor suave para leitura confortavel */
+    --erro: #A64444; /* vermelho fechado e discreto para nao quebrar a harmonia visual */
+}
+
+/* reset basico para zerar espacamentos nativos dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif; /* fonte moderna e limpa para leitura */
+}
+
+/* estilizacao do fundo da tela inteira */
+body {
+    background-color: var(--verde-oliva);
+    background-image: linear-gradient(135deg, var(--verde-oliva) 0%, var(--verde-oliva-dark) 100%); /* degrade com o novo oliva claro */
+    display: flex;
+    justify-content: center; /* centraliza o card na horizontal */
+    align-items: center; /* centraliza o card na vertical */
+    min-height: 100vh; /* garante que o fundo cubra toda a altura da tela */
+    padding: 40px 20px; /* espacamento interno confortavel para telas compridas */
+}
+
+/* design do card de cadastro */
+.cadastro-container {
+    background-color: var(--bege-card);
+    padding: 45px;
+    border-radius: 16px; /* cantos arredondados elegantes e modernos */
+    width: 100%;
+    max-width: 480px; /* expandido sutilmente para acomodar as colunas internas com elegancia */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* sombra leve ajustada para o fundo claro */
+    border: 1px solid rgba(92, 64, 51, 0.1); /* borda fina em tom marrom para acabamento refinado */
+}
+
+/* titulo com fonte classica playfair display para passar ideia de tradicao e luxo */
+.cadastro-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--marrom-couro);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px; /* espacamento elegante entre as letras */
+}
+
+/* subtitulo com instrucoes claras e calmas */
+.cadastro-header p {
+    color: #70655E;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+/* organizadores de layouts em multiplas colunas */
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* divide a linha igualmente em duas colunas */
+    gap: 15px; /* espaco horizontal entre os dois inputs */
+}
+
+.input-row-three {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr; /* divide a linha em tres colunas proporcionais */
+    gap: 12px;
+}
+
+/* espacamento entre cada bloco de pergunta */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* rotulo superior estilizado em caixa alta discreta */
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--marrom-couro);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* campos de digitacao e seletores internos */
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #E6DFD5;
+    background-color: var(--bege-claro);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--texto-escuro);
+    transition: all 0.3s ease; /* transicao suave ao clicar ou digitar */
+    appearance: none; /* remove estilizações nativas do select em alguns navegadores */
+}
+
+/* adiciona uma seta customizada sutil para o campo de selecao de genero */
+.input-group select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='10' height='6' viewBox='0 0 10 6'><path fill='%235C4033' d='M0 0l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 35px;
+    cursor: pointer;
+}
+
+/* efeito visual ao clicar no campo de texto */
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--marrom-couro); /* muda a borda para marrom couro */
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(92, 64, 51, 0.05); /* aura sutil ao redor do input */
+}
+
+/* botao de envio principal */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--verde-oliva); /* usa o novo tom de verde mais aberto */
+    color: var(--bege-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(112, 130, 100, 0.3); /* sombra ajustada para o verde claro */
+}
+
+/* efeito visual ao passar o mouse por cima do botao */
+.btn-submit:hover {
+    background-color: var(--marrom-couro); /* muda de verde para marrom de forma sofisticada */
+    transform: translateY(-1px); /* micro movimento para cima indicando clique disponivel */
+    box-shadow: 0 6px 18px rgba(92, 64, 51, 0.25);
+}
+
+/* rodape inferior para trocar de tela */
+.cadastro-footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.cadastro-footer p {
+    font-size: 0.85rem;
+    color: #70655E;
+}
+
+.cadastro-footer a {
+    color: var(--marrom-couro);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.cadastro-footer a:hover {
+    text-decoration: underline;
+}
+
+/* mensagens de erro ocultas por padrao */
+.error-message {
+    color: var(--erro);
+    font-size: 0.75rem;
+    margin-top: 5px;
+    display: none; /* so aparece via javascript se houver erro */
+}
+
+/* estilo temporario ativado pelo javascript quando o campo falhar na validacao */
+.input-group.invalid input,
+.input-group.invalid select {
+    border-color: var(--erro);
+    background-color: #FFF5F5;
+}
+
+/* faz o texto de erro aparecer caso a classe invalid seja injetada */
+.input-group.invalid .error-message {
+    display: block;
+}

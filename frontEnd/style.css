@@ -1,0 +1,166 @@
+/* definição da paleta de cores consistente com todo o ecossistema oliva & co. */
+:root {
+    --verde-oliva: #708264; /* tom de verde-oliva mais claro e moderno que você escolheu */
+    --verde-oliva-dark: #55664C; /* tom médio para criar o degradê suave de fundo */
+    --marrom-couro: #5C4033; /* cor dos textos principais e destaques premium */
+    --bege-claro: #F9F6F0; /* fundo do card principal simulando papel de alta gramatura */
+    --texto-escuro: #2D2722; /* cor suave para leitura confortável */
+}
+
+/* reset básico para zerar espaçamentos nativos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--verde-oliva);
+    background-image: linear-gradient(135deg, var(--verde-oliva) 0%, var(--verde-oliva-dark) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* estrutura do painel central de boas-vindas */
+.home-container {
+    background-color: var(--bege-claro);
+    padding: 60px 45px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(92, 64, 51, 0.1);
+    text-align: center;
+}
+
+/* sub-marca em francês no topo para reforçar o requinte */
+.sub-brand {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8A7E73;
+    margin-bottom: 10px;
+}
+
+/* título principal com a fonte clássica de luxo */
+.home-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--marrom-couro);
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* linha divisória minimalista */
+.divider {
+    width: 60px;
+    height: 1.5px;
+    background-color: var(--marrom-couro);
+    margin: 20px auto;
+    opacity: 0.4;
+}
+
+/* parágrafo manifesto de apresentação */
+.tagline {
+    color: #554D46;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* lista sutil destacando os diferenciais da boutique */
+.services-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 45px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(92, 64, 51, 0.05);
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.service-icon {
+    color: var(--verde-oliva);
+    font-size: 0.9rem;
+}
+
+.service-item p {
+    font-size: 0.9rem;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* bloco contendo os botões de navegação */
+.home-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+/* link/botão principal para quem quer se registrar */
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--verde-oliva);
+    color: var(--bege-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(112, 130, 100, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--marrom-couro);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(92, 64, 51, 0.25);
+}
+
+/* link/botão secundário elegante para quem já possui cadastro */
+.btn-secondary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: transparent;
+    color: var(--marrom-couro);
+    border: 1.5px solid var(--marrom-couro);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(92, 64, 51, 0.05);
+    transform: translateY(-1px);
+}
+
+/* rodapé institucional */
+.home-footer p {
+    font-size: 0.75rem;
+    color: #8A7E73;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

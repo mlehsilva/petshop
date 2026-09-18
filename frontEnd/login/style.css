@@ -1,109 +1,181 @@
+/* definição da paleta de cores sofisticada usando variáveis do css */
+:root {
+    --verde-oliva: #708264; /* tom de verde-oliva mais claro e moderno que você escolheu */
+    --verde-oliva-dark: #55664C; /* tom médio para criar o degradê suave de fundo */
+    --marrom-couro: #5C4033; /* cor dos textos principais e destaques premium */
+    --bege-claro: #F9F6F0; /* fundo dos inputs simulando papel acetinado de alta gramatura */
+    --bege-card: #FFFFFF; /* fundo do card principal para contraste limpo */
+    --texto-escuro: #2D2722; /* cor suave para leitura confortável */
+    --erro: #A64444; /* vermelho fechado e discreto para não quebrar a harmonia visual */
+}
+
+/* reset básico para zerar espaçamentos nativos dos navegadores */
 * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif; /* fonte moderna e limpa para leitura */
+}
 
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+/* estilização do fundo da tela inteira */
+body {
+    background-color: var(--verde-oliva);
+    background-image: linear-gradient(135deg, var(--verde-oliva) 0%, var(--verde-oliva-dark) 100%); /* degradê com o novo oliva claro */
+    display: flex;
+    justify-content: center; /* centraliza o card na horizontal */
+    align-items: center; /* centraliza o card na vertical */
+    min-height: 100vh; /* garante que o fundo cubra toda a altura da tela */
+    padding: 20px;
+}
 
-        .login-card {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            max-width: 380px;
-        }
+/* design do card de login */
+.login-container {
+    background-color: var(--bege-card);
+    padding: 45px;
+    border-radius: 16px; /* cantos arredondados elegantes e modernos */
+    width: 100%;
+    max-width: 450px; /* largura máxima confortável para computadores e celulares */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* sombra leve ajustada para o fundo claro */
+    border: 1px solid rgba(92, 64, 51, 0.1); /* borda fina em tom marrom para acabamento refinado */
+}
 
-        .login-card h2 {
-            color: #333;
-            margin-bottom: 24px;
-            text-align: center;
-            font-size: 1.75rem;
-        }
+/* título com fonte clássica playfair display para passar ideia de tradição e luxo */
+.login-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--marrom-couro);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px; /* espaçamento elegante entre as letras */
+}
 
-        .input-group {
-            margin-bottom: 20px;
-        }
+/* subtítulo com instruções claras e calmas */
+.login-header p {
+    color: #70655E;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
 
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+/* espaçamento entre cada bloco de pergunta */
+.input-group {
+    margin-bottom: 22px;
+    position: relative;
+}
 
-        .input-group input {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
+/* alinhador que joga o texto 'esqueceu?' para o lado direito da label */
+.label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
 
-        .input-group input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-        }
+/* rótulo superior estilizado em caixa alta discreta */
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--marrom-couro);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-        .password-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
+/* link discreto de recuperação de senha */
+.link-esqueceu {
+    font-size: 0.8rem;
+    color: #70655E;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
 
-        .password-wrapper input {
-            padding-right: 44px;
-        }
+.link-esqueceu:hover {
+    color: var(--marrom-couro);
+    text-decoration: underline;
+}
 
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            color: #666;
-            padding: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-        }
+/* campos de digitação internos */
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #E6DFD5;
+    background-color: var(--bege-claro);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--texto-escuro);
+    transition: all 0.3s ease; /* transição suave ao clicar ou digitar */
+}
 
-        .toggle-password:hover {
-            color: #333;
-        }
+/* efeito visual ao clicar no campo de texto */
+.input-group input:focus {
+    outline: none;
+    border-color: var(--marrom-couro); /* muda a borda para marrom couro */
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(92, 64, 51, 0.05); /* aura sutil ao redor do input */
+}
 
-        .toggle-password svg {
-            width: 20px;
-            height: 20px;
-        }
+/* botão de envio principal */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--verde-oliva); /* usa o tom de verde mais aberto */
+    color: var(--bege-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(112, 130, 100, 0.3); /* sombra ajustada para o verde claro */
+}
 
-        .btn-submit {
-            width: 100%;
-            padding: 12px;
-            background-color: #667eea;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            margin-top: 10px;
-        }
+/* efeito visual ao passar o mouse por cima do botão */
+.btn-submit:hover {
+    background-color: var(--marrom-couro); /* muda de verde para marrom de forma sofisticada */
+    transform: translateY(-1px); /* micro movimento para cima indicando clique disponível */
+    box-shadow: 0 6px 18px rgba(92, 64, 51, 0.25);
+}
 
-        .btn-submit:hover {
-            background-color: #5a67d8;
-        }
+/* rodapé inferior para alternar de tela */
+.login-footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-footer p {
+    font-size: 0.85rem;
+    color: #70655E;
+}
+
+.login-footer a {
+    color: var(--marrom-couro);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* mensagens de erro ocultas por padrão */
+.error-message {
+    color: var(--erro);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none; /* só aparece via javascript se houver erro */
+}
+
+/* estilo temporário ativado pelo javascript quando o campo falhar na validação */
+.input-group.invalid input {
+    border-color: var(--erro);
+    background-color: #FFF5F5;
+}
+
+/* faz o texto de erro aparecer caso a classe invalid seja injetada */
+.input-group.invalid .error-message {
+    display: block;
+}

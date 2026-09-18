@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>painel exclusivo - oliva & co.</title>
+    <!-- fontes elegantes importadas do google fonts para o alto padrão -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- container principal da area logada -->
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h2>Oliva & Co.</h2>
+            <p class="boas-vindas">bem-vindo de volta, <span id="txtNomeTutor">tutor</span>!</p>
+        </header>
+
+        <!-- card com a ficha tecnica do pet cadastrada no mysql -->
+        <main class="pet-card">
+            <h3>Ficha de Membro Exclusivo</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">nome do pet:</span>
+                    <span class="value" id="txtNomePet">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">raça:</span>
+                    <span class="value" id="txtRaca">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">gênero:</span>
+                    <span class="value" id="txtGenero">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">peso do pet:</span>
+                    <span class="value" id="txtPeso">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">idade:</span>
+                    <span class="value" id="txtIdade">-</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- acao para sair do sistema de forma segura -->
+        <footer class="dashboard-footer">
+            <button id="btnSair" class="btn-logout">Sair do Espaço Exclusivo</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

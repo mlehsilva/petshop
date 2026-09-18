@@ -3,26 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de gerenciamento de Pet Shop</title>
+    <title>login exclusivo - pet boutique</title>
+    <!-- fontes elegantes importadas do google fonts para manter a consistência de alto padrão -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- link de conexão com o arquivo de estilização exclusivo do login -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-card">
-        <h2>Login</h2>
-        <form id="loginForm" novalidate>
+    <!-- container principal que centraliza o card de login na tela -->
+    <div class="login-container">
+        <!-- cabeçalho do formulário com o nome sofisticado da boutique -->
+        <div class="login-header">
+            <h2>Oliva & Co.</h2>
+            <p>insira suas credenciais para acessar o espaço do seu pet.</p>
+        </div>
+        
+        <!-- formulário com novalidate para deixar a validação visual apenas por conta do javascript -->
+        <form id="formLogin" noValidate>
+            <!-- grupo de entrada para o e-mail cadastrado -->
             <div class="input-group">
-                <label>E-mail</label>
-                <input id="email" type="email" placeholder="seu@email.com" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="tutor@exemplo.com" required>
+                <span class="error-message" id="error-email">por favor, insira um e-mail válido.</span>
             </div>
+
+            <!-- grupo de entrada para a senha secreta -->
             <div class="input-group">
-                <label>Senha</label>
-                <input id="senha" type="password" placeholder="Digite a sua senha" required>
+                <div class="label-wrapper">
+                    <label for="senha">Senha</label>
+                    <!-- link discreto para recuperação de conta -->
+                    <a href="#" class="link-esqueceu">esqueceu?</a>
+                </div>
+                <input type="password" id="senha" placeholder="digite sua senha" required>
+                <span class="error-message" id="error-senha">a senha deve ter pelo menos 6 caracteres.</span>
             </div>
-            <div>
-                <button class="btn-submit" type="submit">Entrar</button>
+
+            <!-- botão de envio principal -->
+            <button type="submit" class="btn-submit">Entrar no Espaço Exclusivo</button>
+            
+            <!-- rodapé do card para guiar novos clientes de luxo -->
+            <div class="login-footer">
+                <p>novo por aqui? <a href="../cadastro/index.html">Fazer cadastro</a></p>
             </div>
         </form>
     </div>
-    <script src="script.js" defer></script>
+
+    <!-- link de conexão com o arquivo de inteligência e validação em javascript -->
+    <script src="script.js"></script>
 </body>
 </html>

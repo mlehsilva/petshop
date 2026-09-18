@@ -1,0 +1,127 @@
+/* definicao da paleta de cores consistente com as telas anteriores */
+:root {
+    --verde-oliva: #708264;
+    --verde-oliva-dark: #55664C;
+    --marrom-couro: #5C4033;
+    --bege-claro: #F9F6F0;
+    --bege-card: #FFFFFF;
+    --texto-escuro: #2D2722;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--verde-oliva);
+    background-image: linear-gradient(135deg, var(--verde-oliva) 0%, var(--verde-oliva-dark) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* estrutura do painel central */
+.dashboard-container {
+    background-color: var(--bege-card);
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(92, 64, 51, 0.1);
+}
+
+.dashboard-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--marrom-couro);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.boas-vindas {
+    text-align: center;
+    color: #70655E;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.boas-vindas span {
+    font-weight: 600;
+    color: var(--texto-escuro);
+}
+
+/* estilização da ficha do pet de alto padrão */
+.pet-card {
+    background-color: var(--bege-claro);
+    border: 1.5px solid #E6DFD5;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.pet-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--marrom-couro);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* organizador em grid para alinhar a ficha tecnica */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #E6DFD5;
+    padding-bottom: 8px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.label {
+    font-size: 0.85rem;
+    color: #70655E;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.value {
+    font-size: 1rem;
+    color: var(--texto-escuro);
+    font-weight: 600;
+}
+
+/* botao premium de logout */
+.btn-logout {
+    width: 100%;
+    padding: 14px;
+    background-color: transparent;
+    color: #A64444;
+    border: 1.5px solid #A64444;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #A64444;
+    color: #FFFFFF;
+}

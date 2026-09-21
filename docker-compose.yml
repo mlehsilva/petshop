@@ -1,0 +1,40 @@
+services:
+  # Serviço do Banco de Dados MySQL
+  db:
+    image: mysql:8.0
+    container_name: oliva_co_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: suasenha
+      MYSQL_DATABASE: oliva_co
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # Opcional: Se quiser criar a tabela automaticamente ao iniciar, descomente a linha abaixo:
+      # - ./backEnd/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - petshop_network
+
+  # Serviço da sua API Node.js (Apontando para a pasta backEnd)
+  api:
+    build:
+      context: ./backEnd # Diz ao Docker para procurar o Dockerfile dentro da pasta backEnd
+    container_name: oliva_co_api
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db  # Aponta exatamente para o nome do serviço do MySQL acima
+      - PORT=3000
+    depends_on:
+      - db
+    networks:
+      - petshop_network
+
+volumes:
+  mysql_data:
+
+networks:
+  petshop_network:
+    driver: bridge

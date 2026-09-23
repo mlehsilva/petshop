@@ -44,6 +44,8 @@ antes de iniciar, certifique-se de ter instalado em sua máquina:
 ### 1. subir o banco de dados no docker
 abra o terminal na raiz do projeto (onde está o arquivo `docker-compose.yml`) e execute o comando:
 ```bash
+docker run -d --name meu-mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=sua_senha_aqui -e MYSQL_DATABASE=meu_banco_de_dados mysql:8.0
+
 docker-compose up -d
 ```
 *abra o seu docker desktop para confirmar que o grupo de containers do mysql está ativo na porta 3306.*

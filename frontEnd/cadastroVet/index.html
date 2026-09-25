@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliva & Co. — Cadastro de Veterinários</title>
+    <!-- Fontes exclusivas da marca -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cadastro-container">
+        <header class="cadastro-header">
+            <h2>Oliva & Co.</h2>
+            <p>Insira as credenciais do profissional para efetuar o registro clínico.</p>
+        </header>
+
+        <form id="cadastro-vet">
+            <!-- Campo Nome -->
+            <div class="input-group">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="Digite o nome">
+            </div>
+
+            <!-- Campo CFMV/CRMV -->
+            <div class="input-group">
+                <label for="cfmv">CFMV / CRMV</label>
+                <input type="text" name="CFMV" id="cfmv" placeholder="Digite o CFMV">
+            </div>
+
+            <!-- Campo Especialidade -->
+            <div class="input-group">
+                <label for="especialidade">Especialidade</label>
+                <input type="text" name="especialidade" id="especialidade" placeholder="Digite a especialidade">
+            </div>
+
+            <button type="submit" class="btn-submit">Salvar Registro</button>
+        </form>
+    </div>
+
+    <!-- Referência corrigida para o seu arquivo script.js -->
+    <script src="script.js"></script>
+</body>
+</html>

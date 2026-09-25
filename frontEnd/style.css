@@ -22,10 +22,72 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 90px 20px 40px 20px; /* Aumentado o topo para dar espaço respirável para a navbar */
+    position: relative;
 }
 
-/* estrutura do painel central de boas-vindas */
+/* ----------------------------------------------------
+   ESTILIZAÇÃO DA NAVBAR DO TOP (ADICIONADA)
+------------------------------------------------------- */
+.navbar-home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end; /* Alinha os links à direita da tela */
+    align-items: center;
+    gap: 30px;
+    padding: 30px 40px;
+    background-color: transparent;
+}
+
+.navbar-home a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bege-claro); /* Texto claro para ler por cima do fundo oliva */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Linha minimalista passando sob os links institucionais no hover */
+.navbar-home a:not(.btn-vet-link)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1.5px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--bege-claro);
+    transition: width 0.3s ease;
+}
+
+.navbar-home a:not(.btn-vet-link):hover::after {
+    width: 100%;
+}
+
+/* Estilo pílula premium para o botão do médico veterinário */
+.navbar-home .btn-vet-link {
+    font-size: 0.75rem;
+    padding: 10px 20px;
+    border: 1.5px solid var(--bege-claro);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-home .btn-vet-link:hover {
+    background-color: var(--bege-claro);
+    color: var(--marrom-couro); /* Inverte as cores criando destaque no hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ----------------------------------------------------
+   ESTRUTURA DO PAINEL CENTRAL DE BOAS-VINDAS
+------------------------------------------------------- */
 .home-container {
     background-color: var(--bege-claro);
     padding: 60px 45px;
@@ -163,4 +225,27 @@ body {
     color: #8A7E73;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVIDADE PARA SMARTPHONES
+------------------------------------------------------- */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        padding-top: 100px; /* Empurra o card para baixo para não sobrepor a navbar mobile */
+    }
+    
+    .navbar-home {
+        justify-content: center; /* Centraliza o menu em telas pequenas */
+        padding: 20px;
+    }
+    
+    .home-container {
+        padding: 40px 20px;
+    }
+    
+    .home-header h2 {
+        font-size: 2.2rem;
+    }
 }

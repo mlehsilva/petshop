@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oliva & Co. - pet boutique e spa de alto padrão</title>
     <!-- fontes elegantes importadas do google fonts para o ar de sofisticação -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- link de conexão com o arquivo de estilização da tela de entrada -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Menu superior absoluto para os veterinários acessarem diretamente a partir da raiz -->
+    <nav class="navbar-home">
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#servicos">Serviços</a>
+        <a href="cadastroVet/index.html" class="btn-vet-link">Sou Veterinário</a>
+    </nav>
+
     <!-- container principal da tela de entrada da boutique -->
     <div class="home-container">
         <!-- topo com a marca e a proposta de valor premium -->
         <header class="home-header">
-            <span class="sub-brand">haute couture pour animaux</span>
+            <span class="sub-brand">L'excellence du soin pour votre compagnon.</span>
             <h2>Oliva & Co.</h2>
             <div class="divider"></div>
             <p class="tagline">um refúgio de bem-estar, cuidado exclusivo e sofisticação para o seu companheiro mais leal.</p>
@@ -40,6 +48,7 @@
 
         <!-- botões de ação que direcionam o usuário para as respectivas pastas de login e cadastro -->
         <main class="home-actions">
+            <!-- Nota: se a pasta do tutor se chamar 'cadastro-tutor', mude o href abaixo para 'cadastro-tutor/index.html' -->
             <a href="cadastro/index.html" class="btn-primary">Fazer cadastro</a>
             <a href="login/index.html" class="btn-secondary">Já Sou Cliente Membro</a>
         </main>

@@ -1,0 +1,107 @@
+:root {
+    --verde-oliva: #708264;
+    --verde-oliva-dark: #55664C;
+    --marrom-couro: #5C4033;
+    --bege-claro: #F9F6F0;
+    --bege-card: #FFFFFF;
+    --texto-escuro: #2D2722;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--verde-oliva);
+    background-image: linear-gradient(135deg, var(--verde-oliva) 0%, var(--verde-oliva-dark) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.cadastro-container {
+    background-color: var(--bege-card);
+    padding: 45px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(92, 64, 51, 0.1);
+}
+
+.cadastro-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--marrom-couro);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.cadastro-header p {
+    color: #70655E;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--marrom-couro);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #E6DFD5;
+    background-color: var(--bege-claro);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--texto-escuro);
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--marrom-couro);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(92, 64, 51, 0.05);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--verde-oliva);
+    color: var(--bege-claro);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(112, 130, 100, 0.3);
+}
+
+.btn-submit:hover {
+    background-color: var(--marrom-couro);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(92, 64, 51, 0.25);
+}

@@ -77,6 +77,40 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
+/* ==========================================================================
+   NOVA ROTA: CADASTRO DE VETERINÁRIOS (Oliva & Co. Corpo Clínico)
+   ========================================================================== */
+app.post('/api/vets', async (req, res) => {
+    const { nome, cfmv, especialidade } = req.body;
+
+    /* Validação para garantir que nenhum campo chegue vazio */
+    if (!nome || !cfmv || !especialidade) {
+        return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
+    }
+
+    try {
+        /* Verifica se o CFMV/CRMV informado já está registrado */
+        const [vetsExistentes] = await db.query('SELECT id FROM veterinarios WHERE cfmv = ?', [cfmv]);
+        
+        if (vetsExistentes.length > 0) {
+            return res.status(400).json({ message: 'Este CFMV/CRMV já está cadastrado em nosso sistema.' });
+        }
+
+        /* Insere o novo profissional na tabela 'veterinarios' */
+        const queryInsert = `
+            INSERT INTO veterinarios (nome, cfmv, especialidade) 
+            VALUES (?, ?, ?)
+        `;
+        await db.query(queryInsert, [nome, cfmv, especialidade]);
+
+        return res.status(201).json({ message: 'Veterinário cadastrado com sucesso!' });
+    } catch (err) {
+        console.error('Erro ao salvar veterinário:', err);
+        return res.status(500).json({ message: 'Erro interno no banco de dados do servidor.' });
+    }
+});
+
+
 /* inicia o servidor de alto padrao na porta de rede 3000 */
 const porta = 3000;
 app.listen(porta, () => {

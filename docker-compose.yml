@@ -1,3 +1,4 @@
+# docker run -d --name oliva_co_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=suasenha -e MYSQL_DATABASE=oliva_co mysql:8.0
 services:
   # Serviço do Banco de Dados MySQL
   db:

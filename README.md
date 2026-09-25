@@ -9,24 +9,30 @@ este é o ecossistema completo de uma aplicação de alto padrão para gerenciam
 o projeto está organizado de forma limpa e modular:
 
 ```text
-├── docker-compose.yml       # configuracao do container mysql global
-├── backEnd/                 # api rest em node.js e express
-│   ├── db.js                # conexao e pool com o mysql2
-│   ├── server.js            # rotas e logica de cadastro/login
-│   ├── package.json         # dependencias do backend
-│   └── usuarios.db          # (remova se existir o arquivo antigo do nedb)
-└── frontEnd/                # interfaces visuais da boutique
-    ├── index.html           # tela de entrada principal (landing page)
-    ├── home-style.css       # estilo da tela de entrada
-    ├── dashboard.html       # painel privado do tutor logado
-    ├── dashboard-style.css  # estilo do painel privado
-    ├── cadastro/            # modulo de novos membros
-    │   ├── index.html       # formulario com ficha completa do pet
-    │   └── style.css        # estilo do formulario
-    └── login/               # modulo de acesso de clientes
-        ├── index.html       # formulario de autenticacao
-        └── style.css        # estilo do login
-```
+├── docker-compose.yml       # Configuração global dos containers (App e Banco)
+├── backEnd/                 # API REST em Node.js e Express
+│   ├── db.js                # Conexão e pool de promessas com o mysql2
+│   ├── server.js            # Rotas e lógica de cadastro (Tutores/Vets) e Login
+│   ├── package.json         # Dependências do backend
+│   └── package-lock.json    # Histórico de versões das dependências
+└── frontEnd/                # Interfaces visuais da boutique
+    ├── index.html           # Tela de entrada principal (Landing Page)
+    ├── style.css            # Estilo da tela de entrada
+    ├── cadastro/            # Módulo de novos clientes (Tutores)
+    │   ├── index.html       # Formulário com ficha completa do pet
+    │   └── style.css        # Estilo do formulário de tutores
+    ├── cadastroVet/         # Módulo de novos parceiros médicos (Veterinários)
+    │   ├── index.html       # Formulário de credenciais clínicas
+    │   ├── script.js        # Validação e envio do formulário médico
+    │   └── style.css        # Estilo do formulário de veterinários
+    ├── dashboard/           # Painel privado do tutor logado
+    │   ├── index.html       # Visualização da ficha do pet
+    │   ├── script.js        # Gerenciamento de sessão do cliente
+    │   └── style.css        # Estilo do painel do tutor
+    └── login/               # Módulo de acesso geral
+        ├── index.html       # Formulário de autenticação
+        ├── script.js        # Lógica de login e integração com a API
+        └── style.css        # Estilo da tela de login
 
 ---
 
@@ -58,7 +64,7 @@ docker-compose up -d
    - **database:** `oliva_co`
    - **username:** `root`
    - **password:** `suasenha`
-3. abra o console sql no dbeaver, cole e execute o script abaixo para criar a tabela de membros premium:
+3. abra o console sql no dbeaver, cole e execute o script abaixo para criar as tabelas necessárias (Membros e Corpo Clínico):
 
 ```sql
 use oliva_co;
@@ -74,6 +80,16 @@ create table if not exists usuarios (
   email varchar(255) unique not null,
   senha varchar(255) not null
 );
+
+-- Tabela do Corpo Clínico (Veterinários)
+CREATE TABLE IF NOT EXISTS veterinarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cfmv INT UNIQUE NOT NULL,
+    especialidade VARCHAR(255) NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 ```
 
 ### 3. inicializar o servidor backend
